@@ -1,0 +1,812 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0"
+      name="viewport"
+    />
+
+    <title>concetual learning</title>
+    <meta
+      content=""
+      name="description"
+    />
+    <meta
+      content=""
+      name="keywords"
+    />
+
+    <!-- Favicons -->
+    <link
+      href="{% static 'assets/img/favicon.png' %}"
+      rel="icon"
+    />
+    <link
+      href="{% static 'assets/img/apple-touch-icon.png' %}"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href=" 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,700' "
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{% static 'assets/vendor/aos/aos.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link
+      href="{% static 'assets/css/style.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- =======================================================
+  * Template Name: NewBiz
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header
+      id="header"
+      class="fixed-top d-flex align-items-center"
+    >
+      <div class="container d-flex justify-content-between">
+        <div class="logo">
+          <!-- Uncomment below if you prefer to use an text logo -->
+          <!-- <h1><a href="index.html">NewBiz</a></h1> -->
+          <a href="index.html"
+            ><img
+              src="{% static 'assets/img/machine.png' %}"
+              alt=""
+              class="img-fluid"
+              width="200"
+              height="200"
+          /></a>
+        </div>
+
+        <nav
+          id="navbar"
+          class="navbar"
+        >
+          <ul>
+            <li>
+              <a
+                class="nav-link scrollto active"
+                href="#hero"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="#about"
+                >Generate</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="#services"
+                >Methods</a
+              >
+            </li>
+
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="#team"
+                >Team</a
+              >
+            </li>
+
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="#footer"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- #header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section
+      id="hero"
+      class="clearfix"
+    >
+      <div
+        class="container"
+        data-aos="fade-up"
+      >
+        <div
+          class="hero-img"
+          data-aos="zoom-out"
+          data-aos-delay="200"
+        >
+          <img
+            src="{% static 'assets/img/hero-img.svg' %}"
+            style="width: 150%"
+            alt=""
+            class="img-fluid"
+          />
+        </div>
+
+        <div
+          class="hero-info"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+        >
+          <h2>
+            Conceptualising Learning Content<br /><span>and</span
+            ><br />Enhancing Learning Experience
+          </h2>
+          <div>
+            <a
+              href="#about"
+              class="btn-get-started scrollto"
+              >Get Started</a
+            >
+            <a
+              href="#services"
+              class="btn-services scrollto"
+              >Methods</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <main id="main">
+      <!-- ======= About Section ======= -->
+      <section id="about">
+        <div
+          class="container"
+          data-aos="fade-up"
+        >
+          <header class="section-header">
+            <h3>Generate Overview and Reflection Quizzes</h3>
+            <p>
+              Welcome to the world of artificial intelligence, where the
+              possibilities are endless and the potential for innovation is
+              limitless.
+            </p>
+          </header>
+
+          <div class="row about-container">
+            <div class="col-lg-6 content order-lg-1 order-2 input-left">
+              <p>The Learning Resources will be converted to overview.</p>
+
+              <div
+                class="icon-box"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="icon"><i class="bi bi-body-text"></i></div>
+                <h4 class="title">Paste your Resources here</h4>
+                <p class="description">
+                  Separate each resource with '$' symbol
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-6 background order-lg-2 input-right"
+              data-aos="zoom-in"
+            >
+              <form
+                method="post"
+                action="{% url 'submit' %}"
+                style="height: 100%; width: 100%; font-size: 15px"
+              >
+                {% csrf_token %}
+                <textarea
+                  class=""
+                  type="input"
+                  name="area"
+                  style="height: 80%; width: 90%"
+                ></textarea>
+                <div
+                  class="icon-box"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                  >
+                    compute
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div
+            class="row about-extra"
+            id="answer"
+          >
+            <div
+              class="col-lg-6"
+              data-aos="fade-right"
+            >
+              {% for a in ans %}
+              <p>{{a}}</p>
+              {% endfor %}
+            </div>
+            <div
+              class="col-lg-6 pt-5 pt-lg-0"
+              data-aos="fade-left"
+              style="justify-content: center"
+            >
+              <h4>Overview</h4>
+              <p>The Respective overview for the resources you entered.</p>
+              <p>
+                The overview contains the important words that hold the concepts
+                and its respective definitions.
+              </p>
+            </div>
+          </div>
+
+          <div class="row about-extra">
+            <div
+              class="col-lg-6 order-1 order-lg-2"
+              data-aos="fade-left"
+            >
+              <img
+                src="{% static 'assets/img/about-extra-2.svg' %}"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1"
+              data-aos="fade-right"
+            >
+              <h4>Reflection quizzes</h4>
+              <div class="icon"><i class="bi bi-body-text"></i></div>
+              {% for q in question %}
+              <p>{{q}}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Section -->
+
+      <!-- ======= Services Section ======= -->
+      <section
+        id="services"
+        class="section-bg"
+      >
+        <div
+          class="container"
+          data-aos="fade-up"
+        >
+          <header class="section-header">
+            <h3>Methods</h3>
+            <p>
+              Retaining learner engagement is a major challenge in online
+              learning environments, which is even more intensified with
+              learning spaces increasingly built by combining resources from
+              multiple independent sources. Narrative-centric learning
+              experience has been found to improve learner engagement by several
+              researchers.
+            </p>
+          </header>
+
+          <div class="row justify-content-center">
+            <div
+              class="col-md-6 col-lg-5"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="box">
+                <div class="icon">
+                  <i
+                    class="bi bi-briefcase"
+                    style="color: #ff689b"
+                  ></i>
+                </div>
+                <h4 class="title"><a href="">Segmentation</a></h4>
+                <p class="description">
+                  The learning pathway is segmented at that point and the next
+                  learning resource in the learning pathway is considered as the
+                  beginning of a new segment
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-5"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="box">
+                <div class="icon">
+                  <i
+                    class="bi bi-card-checklist"
+                    style="color: #e9bf06"
+                  ></i>
+                </div>
+                <h4 class="title"><a href="">Key-phrase Extraction</a></h4>
+                <p class="description">
+                  Selecting the correct key-phrases that represent a given
+                  learning resource is very crucial for generating the Overview
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-5"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="box">
+                <div class="icon">
+                  <i
+                    class="bi bi-bar-chart"
+                    style="color: #3fcdc7"
+                  ></i>
+                </div>
+                <h4 class="title"><a href="">Finding the Main Theme</a></h4>
+                <p class="description">
+                  The main theme for a learning pathway segment is the concept
+                  that collectively represents the concepts in each of the
+                  learning resources
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-5"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="box">
+                <div class="icon">
+                  <i
+                    class="bi bi-binoculars"
+                    style="color: #41cf2e"
+                  ></i>
+                </div>
+                <h4 class="title"><a href="">Overview Generation</a></h4>
+                <p class="description">
+                  Overview provides insights about what to expect in the next
+                  segment of the learning pathway
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-5"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="box">
+                <div class="icon">
+                  <i
+                    class="bi bi-brightness-high"
+                    style="color: #d6ff22"
+                  ></i>
+                </div>
+                <h4 class="title"><a href="">Reflection Quiz Generation</a></h4>
+                <p class="description">
+                  The automatic generation of Reflection quizzes in the form of
+                  Multiple Choice Questions
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-5"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="box">
+                <div class="icon">
+                  <i
+                    class="bi bi-calendar4-week"
+                    style="color: #4680ff"
+                  ></i>
+                </div>
+                <h4 class="title"><a href="">Dataset</a></h4>
+                <p class="description">
+                  The Wikipedia dataset for our experiments since Wikipedia has
+                  an impressive breadth and depth of topical coverage and
+                  Wikipedia’s content is extensively used in education
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Services Section -->
+
+      <!-- ======= Why Us Section ======= -->
+      <section id="why-us">
+        <div
+          class="container"
+          data-aos="fade-up"
+        >
+          <header class="section-header">
+            <h3>Why This Project?</h3>
+            <p>Importance of conceptual learning</p>
+          </header>
+
+          <div class="row row-eq-height justify-content-center">
+            <div class="col-lg-4 mb-4">
+              <div
+                class="card"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                <i class="bi bi-book-half"></i>
+                <div class="card-body">
+                  <h5 class="card-title">Procedural Learning</h5>
+                  <p class="card-text">
+                    Procedural understanding is when students hoard steps and
+                    algorithms. They rely on the memorization of these formulas
+                    to answer questions, and they rarely make deep connections
+                    during instruction.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+              <div
+                class="card"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                <i class="bi bi-book-fill"></i>
+                <div class="card-body">
+                  <h5 class="card-title">Conceptual Learning</h5>
+                  <p class="card-text">
+                    Conceptual understanding is knowing the procedural steps to
+                    solving a problem and understanding why those algorithms and
+                    approaches work, similar to a recognition that there is a
+                    man hiding behind the giant head in The Wizard of Oz. This
+                    level of understanding has students reaching higher depths
+                    of knowledge because they are making connections from one
+                    skill to another.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Why Us Section -->
+
+      <!-- ======= Portfolio Section ======= -->
+      <!-- End Portfolio Section -->
+
+      <!-- ======= Testimonials Section ======= -->
+      <!-- End Testimonials Section -->
+
+      <!-- ======= Team Section ======= -->
+      <section id="team">
+        <div
+          class="container"
+          data-aos="fade-up"
+        >
+          <div class="section-header">
+            <h3>Team</h3>
+            <p>contributions</p>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-out"
+              data-aos-delay="200"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'assets/img/team-1.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>SAIGANESH</h4>
+
+                    <div class="social">
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-out"
+              data-aos-delay="300"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'assets/img/testimonial-1.jpg' %}"
+                  class="img-fluid img"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>AJAY</h4>
+
+                    <div class="social">
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-out"
+              data-aos-delay="400"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'assets/img/team-3.jpg'  %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>KISHOR</h4>
+                    <div class="social">
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Team Section -->
+
+      <!-- ======= Clients Section ======= -->
+      <section
+        id="clients"
+        class="section-bg"
+      >
+        <div
+          class="container"
+          data-aos="fade-up"
+        >
+          <div class="section-header">
+            <h3>Project Links</h3>
+            <p>These links navigate to the GitHub Repository</p>
+          </div>
+
+          <div
+            class="row g-0 clients-wrap clearfix"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="client-logo">
+                <img
+                  src="{% static 'assets/img/clients/client-1.png' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="client-logo">
+                <img
+                  src="{% static 'assets/img/clients/client-2.png' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="client-logo">
+                <img
+                  src="{% static 'assets/img/clients/client-3.png' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="client-logo">
+                <img
+                  src="{% static 'assets/img/clients/client-4.png' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="client-logo">
+                <img
+                  src="{% static 'assets/img/clients/client-5.png' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="client-logo">
+                <img
+                  src="{% static 'assets/img/clients/client-6.png' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="client-logo">
+                <img
+                  src="{% static 'assets/img/clients/client-7.png' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="client-logo">
+                <img
+                  src="{% static 'assets/img/clients/client-8.png' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Clients Section -->
+
+      <!-- ======= Contact Section ======= -->
+      <!-- End Contact Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 footer-info">
+              <h3>project</h3>
+              <p>Enhances Learning.</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Services</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-contact">
+              <h4>Contact Us</h4>
+              <p>
+                Thanjavur <br />
+                Tamilnadu<br />
+                India<br />
+                <strong>Email:</strong> tvdajay2003@gmail.com<br />
+              </p>
+
+              <div class="social-links">
+                <a
+                  href="#"
+                  class="twitter"
+                  ><i class="bi bi-twitter"></i
+                ></a>
+                <a
+                  href="#"
+                  class="facebook"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a
+                  href="#"
+                  class="instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a
+                  href="#"
+                  class="instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a
+                  href="#"
+                  class="linkedin"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong>Ajay</strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+      -->
+          Designed by <a href="https://bootstrapmade.com/">Ajay</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  </body>
+</html>
